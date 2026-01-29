@@ -10,7 +10,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--bg); color: white; font-family: 'Inter', sans-serif; min-height: 100vh; overflow-x: hidden; }
         
-        /* Glass Navigation */
         nav { display: flex; justify-content: center; gap: 30px; padding: 20px; background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.1); }
         nav a { color: #94a3b8; text-decoration: none; font-size: 14px; font-weight: 700; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
         nav a:hover, nav a.active { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
@@ -20,11 +19,9 @@
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Header Section */
         .header-box { display: flex; align-items: flex-start; gap: 30px; padding: 50px 0; border-bottom: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
         .profile-img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--primary); box-shadow: 0 0 40px rgba(0,242,254,0.3); background: url('https://files.catbox.moe/3xqn3x.jpg') center/cover; }
         
-        /* Animated Gradient Name */
         .header-text h1 { 
             font-size: clamp(32px, 8vw, 55px); 
             letter-spacing: -2px; 
@@ -38,30 +35,23 @@
         }
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* Grid System */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-top: 30px; }
         .card { background: var(--card); padding: 30px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; text-decoration: none; color: white; display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { border-color: var(--primary); background: rgba(255,255,255,0.08); transform: translateY(-5px); }
         
-        /* Buttons & Badges */
         .btn-action { display: block; margin-top: 15px; padding: 12px; border-radius: 12px; text-align: center; text-decoration: none; font-weight: bold; font-size: 12px; letter-spacing: 1px; transition: 0.3s; border: 1px solid transparent; }
         .badge { font-size: 10px; padding: 4px 12px; border-radius: 20px; font-weight: 900; }
         
-        /* Help Center */
         .help-center { margin-top: 50px; padding: 40px; border-radius: 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); }
         .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 30px; }
         .help-item { padding: 25px; border-radius: 20px; background: rgba(255,255,255,0.03); color: white; transition: 0.3s; border: 1px solid transparent; text-decoration: none; }
-        .help-item:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
         .contact-btns { display: flex; gap: 10px; margin-top: 15px; }
         .mini-btn { flex: 1; padding: 10px; border-radius: 8px; font-size: 11px; font-weight: bold; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); color: #94a3b8; }
-        .mini-btn:hover { border-color: var(--primary); color: var(--primary); }
 
-        /* Social Action Bar */
         .social-action-bar { margin-top: 40px; padding: 30px; border-radius: 25px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
         .sub-btn-dummy { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: #ff0000; color: white; border-radius: 50px; font-weight: 900; font-size: 16px; margin: 10px; cursor: default; user-select: none; }
         .like-btn-dummy { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: #0022ff; color: white; border-radius: 50px; font-weight: 900; font-size: 16px; margin: 10px; cursor: default; user-select: none; border: 1px solid rgba(255,255,255,0.1); }
 
-        /* Modal */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; }
         .modal-content { background: #0a0f1e; padding: 40px; border-radius: 30px; border: 1px solid var(--primary); width: 90%; max-width: 500px; text-align: center; }
         
@@ -73,7 +63,7 @@
 <nav>
     <a onclick="showPage('home')" id="nav-home" class="active">HOME</a>
     <a onclick="showPage('channels')" id="nav-channels">NETWORKS</a>
-    <a onclick="showPage('shop')" id="nav-shop">VIRU STORE</a>
+    <a onclick="showPage('shop')" id="nav-shop">VIRU SERVICES</a>
 </nav>
 
 <div class="container">
@@ -115,7 +105,7 @@
         </div>
 
         <div class="help-center">
-            <h2 style="font-size: 26px; margin-bottom: 10px;">Help Center & Support</h2>
+            <h2 style="font-size: 26px; margin-bottom: 10px;">Help Center & Inquiries</h2>
             <div class="help-grid">
                 <div class="help-item">
                     <i data-lucide="cpu" style="color: var(--primary); margin-bottom: 15px;"></i>
@@ -136,7 +126,6 @@
                 <div class="help-item" onclick="openModal()" style="cursor: pointer;">
                     <i data-lucide="help-circle" style="color: var(--primary); margin-bottom: 15px;"></i>
                     <h4>Project Guide</h4>
-                    <p style="font-size: 11px; color: #94a3b8; margin-top: 5px;">View Compatibility</p>
                 </div>
             </div>
         </div>
@@ -173,13 +162,25 @@
     </div>
 
     <div id="shop" class="page">
-        <h2 style="margin: 30px 0; font-size: 28px; border-left: 5px solid var(--primary); padding-left: 15px;">Viru Store</h2>
+        <h2 style="margin: 30px 0; font-size: 28px; border-left: 5px solid var(--primary); padding-left: 15px;">Official Services</h2>
         <div class="grid">
-            <div class="card" style="max-width: 400px;">
-                <h3 style="font-size: 22px;">iPhone 6 Parts</h3>
-                <p style="color: #94a3b8; font-size: 14px; margin-top: 10px;">Original hardware components.</p>
-                <span style="font-size: 24px; font-weight: 800; color: var(--primary); margin-top: 20px;">Rs. 2,500</span>
-                <button onclick="location.href='https://wa.me/94786888371'" style="background:var(--primary); color:black; border:none; width:100%; cursor:pointer; padding:15px; border-radius:15px; font-weight:bold; margin-top:20px;">MESSAGE TO BUY</button>
+            <div class="card" style="border-top: 4px solid var(--primary);">
+                <i data-lucide="code-2" style="color: var(--primary); margin-bottom: 15px;"></i>
+                <h3 style="font-size: 20px;">Website Designing</h3>
+                <p style="color: #94a3b8; font-size: 13px; margin-top: 10px;">Custom landing pages, portfolios and full-stack web applications.</p>
+                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Website+Service'" class="btn-action" style="background:var(--primary); color:black; border:none; margin-top:20px;">INQUIRE NOW</button>
+            </div>
+            <div class="card" style="border-top: 4px solid #ef4444;">
+                <i data-lucide="film" style="color: #ef4444; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 20px;">Video Editing</h3>
+                <p style="color: #94a3b8; font-size: 13px; margin-top: 10px;">Professional YouTube editing, cinematic shorts, and AI visuals.</p>
+                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Video+Editing+Service'" class="btn-action" style="background:#ef4444; color:white; border:none; margin-top:20px;">INQUIRE NOW</button>
+            </div>
+            <div class="card" style="border-top: 4px solid #a855f7;">
+                <i data-lucide="palette" style="color: #a855f7; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 20px;">Graphic Designing</h3>
+                <p style="color: #94a3b8; font-size: 13px; margin-top: 10px;">Logo design, YouTube thumbnails, and social media branding.</p>
+                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Graphic+Design+Service'" class="btn-action" style="background:#a855f7; color:white; border:none; margin-top:20px;">INQUIRE NOW</button>
             </div>
         </div>
     </div>
