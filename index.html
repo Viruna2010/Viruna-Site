@@ -45,12 +45,13 @@
         .help-center { margin-top: 50px; padding: 40px; border-radius: 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); }
         .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 30px; }
         .help-item { padding: 25px; border-radius: 20px; background: rgba(255,255,255,0.03); color: white; transition: 0.3s; border: 1px solid transparent; text-decoration: none; }
+        .help-item:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
         .contact-btns { display: flex; gap: 10px; margin-top: 15px; }
         .mini-btn { flex: 1; padding: 10px; border-radius: 8px; font-size: 11px; font-weight: bold; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); color: #94a3b8; }
 
         .social-action-bar { margin-top: 40px; padding: 30px; border-radius: 25px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
-        .sub-btn-dummy { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: #ff0000; color: white; border-radius: 50px; font-weight: 900; font-size: 16px; margin: 10px; cursor: default; user-select: none; }
-        .like-btn-dummy { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: #0022ff; color: white; border-radius: 50px; font-weight: 900; font-size: 16px; margin: 10px; cursor: default; user-select: none; border: 1px solid rgba(255,255,255,0.1); }
+        .sub-btn-dummy { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: #ff0000; color: white; border-radius: 50px; font-weight: 900; font-size: 16px; margin: 10px; cursor: default; }
+        .like-btn-dummy { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; background: #0022ff; color: white; border-radius: 50px; font-weight: 900; font-size: 16px; margin: 10px; cursor: default; }
 
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; }
         .modal-content { background: #0a0f1e; padding: 40px; border-radius: 30px; border: 1px solid var(--primary); width: 90%; max-width: 500px; text-align: center; }
@@ -105,7 +106,7 @@
         </div>
 
         <div class="help-center">
-            <h2 style="font-size: 26px; margin-bottom: 10px;">Help Center & Inquiries</h2>
+            <h2 style="font-size: 26px; margin-bottom: 10px;">Help Center & Support</h2>
             <div class="help-grid">
                 <div class="help-item">
                     <i data-lucide="cpu" style="color: var(--primary); margin-bottom: 15px;"></i>
@@ -123,9 +124,13 @@
                         <a href="mailto:viruna.randinu1@gmail.com" class="mini-btn">EMAIL</a>
                     </div>
                 </div>
-                <div class="help-item" onclick="openModal()" style="cursor: pointer;">
-                    <i data-lucide="help-circle" style="color: var(--primary); margin-bottom: 15px;"></i>
-                    <h4>Project Guide</h4>
+                <div class="help-item" onclick="openModal()" style="cursor: pointer; background: rgba(0, 242, 254, 0.03); border: 1px solid rgba(0, 242, 254, 0.1);">
+                    <i data-lucide="shield-check" style="color: var(--primary); margin-bottom: 15px;"></i>
+                    <h4 style="color: var(--primary);">Project Guide</h4>
+                    <p style="font-size: 11px; color: #94a3b8; margin-top: 5px;">
+                        <i data-lucide="zap" style="width: 10px; display: inline;"></i> 99.9% Uptime Verified<br>
+                        <i data-lucide="lock" style="width: 10px; display: inline;"></i> End-to-End Encryption
+                    </p>
                 </div>
             </div>
         </div>
@@ -168,19 +173,19 @@
                 <i data-lucide="code-2" style="color: var(--primary); margin-bottom: 15px;"></i>
                 <h3 style="font-size: 20px;">Website Designing</h3>
                 <p style="color: #94a3b8; font-size: 13px; margin-top: 10px;">Custom landing pages, portfolios and full-stack web applications.</p>
-                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Website+Service'" class="btn-action" style="background:var(--primary); color:black; border:none; margin-top:20px;">INQUIRE NOW</button>
+                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Website+Service'" class="btn-action" style="background:var(--primary); color:black; border:none; margin-top:20px; cursor: pointer;">INQUIRE NOW</button>
             </div>
             <div class="card" style="border-top: 4px solid #ef4444;">
                 <i data-lucide="film" style="color: #ef4444; margin-bottom: 15px;"></i>
                 <h3 style="font-size: 20px;">Video Editing</h3>
                 <p style="color: #94a3b8; font-size: 13px; margin-top: 10px;">Professional YouTube editing, cinematic shorts, and AI visuals.</p>
-                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Video+Editing+Service'" class="btn-action" style="background:#ef4444; color:white; border:none; margin-top:20px;">INQUIRE NOW</button>
+                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Video+Editing+Service'" class="btn-action" style="background:#ef4444; color:white; border:none; margin-top:20px; cursor: pointer;">INQUIRE NOW</button>
             </div>
             <div class="card" style="border-top: 4px solid #a855f7;">
                 <i data-lucide="palette" style="color: #a855f7; margin-bottom: 15px;"></i>
                 <h3 style="font-size: 20px;">Graphic Designing</h3>
                 <p style="color: #94a3b8; font-size: 13px; margin-top: 10px;">Logo design, YouTube thumbnails, and social media branding.</p>
-                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Graphic+Design+Service'" class="btn-action" style="background:#a855f7; color:white; border:none; margin-top:20px;">INQUIRE NOW</button>
+                <button onclick="location.href='https://wa.me/94786888371?text=I+need+a+Graphic+Design+Service'" class="btn-action" style="background:#a855f7; color:white; border:none; margin-top:20px; cursor: pointer;">INQUIRE NOW</button>
             </div>
         </div>
     </div>
