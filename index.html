@@ -34,12 +34,19 @@
         .btn-apk { background: rgba(255, 255, 255, 0.1); color: white; border-color: white; }
         .btn-buy { background: var(--primary); color: black; border: none; width: 100%; cursor: pointer; margin-top: 20px; padding: 15px; border-radius: 15px; font-weight: bold; }
 
+        /* Help Center */
         .help-center { margin-top: 50px; padding: 40px; border-radius: 28px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); }
-        .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .help-item { padding: 25px; border-radius: 20px; background: rgba(255,255,255,0.03); color: white; transition: 0.3s; border: 1px solid transparent; text-decoration: none; }
+        .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .help-item { padding: 25px; border-radius: 20px; background: rgba(255,255,255,0.03); color: white; transition: 0.3s; border: 1px solid transparent; text-decoration: none; cursor: pointer; }
+        .help-item:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
         .contact-btns { display: flex; gap: 10px; margin-top: 15px; }
         .mini-btn { flex: 1; padding: 8px; border-radius: 8px; font-size: 11px; font-weight: bold; text-align: center; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); color: #94a3b8; }
-        .mini-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* Modern Popup (Modal) */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; }
+        .modal-content { background: #0a0f1e; padding: 40px; border-radius: 30px; border: 1px solid var(--primary); width: 90%; max-width: 500px; text-align: center; animation: modalZoom 0.3s ease-out; }
+        @keyframes modalZoom { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-btn { margin-top: 25px; padding: 12px 30px; background: var(--primary); color: #000; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
         
         footer { text-align: center; padding: 40px; color: #64748b; font-size: 12px; letter-spacing: 1px; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
@@ -81,7 +88,7 @@
             <div class="card" style="border-left: 5px solid var(--primary);">
                 <div>
                     <h3 style="font-size: 20px;">Viru AI</h3>
-                    <p style="color: #94a3b8; font-size: 14px; margin-top: 10px;">Custom-built AI interface with APK.</p>
+                    <p style="color: #94a3b8; font-size: 14px; margin-top: 10px;">Custom AI interface with APK.</p>
                     <div style="display: flex; gap: 10px;">
                         <a href="https://viru-ai.vercel.app/" target="_blank" class="btn-action btn-blue" style="flex: 1;">WEB</a>
                         <a href="https://www.mediafire.com/file/iudgyz9j4vzash3/_VIRU_AI_19485577.apk/file" target="_blank" class="btn-action btn-apk" style="flex: 1;">APK</a>
@@ -95,8 +102,7 @@
             <div class="help-grid">
                 <div class="help-item">
                     <i data-lucide="cpu" style="color: var(--primary); margin-bottom: 15px;"></i>
-                    <h4 style="margin-bottom: 8px;">Technical Support</h4>
-                    <p style="font-size: 12px; color: #94a3b8;">Help with AI, Bots, or APIs.</p>
+                    <h4>Technical Support</h4>
                     <div class="contact-btns">
                         <a href="https://wa.me/94786888371" class="mini-btn">WHATSAPP</a>
                         <a href="mailto:viruna.randinu1@gmail.com" class="mini-btn">EMAIL</a>
@@ -104,17 +110,16 @@
                 </div>
                 <div class="help-item">
                     <i data-lucide="briefcase" style="color: var(--primary); margin-bottom: 15px;"></i>
-                    <h4 style="margin-bottom: 8px;">Business & Ads</h4>
-                    <p style="font-size: 12px; color: #94a3b8;">Partnerships & Projects.</p>
+                    <h4>Business & Ads</h4>
                     <div class="contact-btns">
                         <a href="https://wa.me/94786888371" class="mini-btn">WHATSAPP</a>
                         <a href="mailto:viruna.randinu1@gmail.com" class="mini-btn">EMAIL</a>
                     </div>
                 </div>
-                <div class="help-item">
+                <div class="help-item" onclick="openModal()">
                     <i data-lucide="help-circle" style="color: var(--primary); margin-bottom: 15px;"></i>
-                    <h4 style="margin-bottom: 8px;">Project Guide</h4>
-                    <p style="font-size: 12px; color: #94a3b8;">Optimized for Android 10+. Use official APKs.</p>
+                    <h4>Project Guide</h4>
+                    <p style="font-size: 12px; color: #94a3b8; margin-top: 5px;">View Compatibility & Guidelines</p>
                 </div>
             </div>
         </div>
@@ -126,8 +131,6 @@
             <a href="#" class="card"><h3>Viru Beatz</h3><span class="badge" style="background:var(--primary); color:black;">7.2K SUBS</span></a>
             <a href="#" class="card"><h3>Anything Channel</h3><span class="badge" style="background:var(--primary); color:black;">DAILY SHORTS</span></a>
             <a href="#" class="card"><h3>TikTok Official</h3><span class="badge" style="background:var(--primary); color:black;">TRENDING</span></a>
-            <a href="#" class="card"><h3>Tech Stream</h3><span class="badge" style="background:#1e293b; color:#94a3b8;">LOCKED</span></a>
-            <a href="#" class="card"><h3>Dev Log</h3><span class="badge" style="background:#1e293b; color:#94a3b8;">LOCKED</span></a>
         </div>
     </div>
 
@@ -135,13 +138,26 @@
         <h2 style="margin: 30px 0; font-size: 28px; border-left: 5px solid var(--primary); padding-left: 15px;">Viru Store</h2>
         <div class="grid">
             <div class="card" style="max-width: 400px;">
-                <i data-lucide="smartphone" style="color: var(--primary); margin-bottom: 15px;"></i>
                 <h3 style="font-size: 22px;">iPhone 6 Parts</h3>
-                <p style="color: #94a3b8; font-size: 14px; margin-top: 10px;">Original display and hardware components.</p>
+                <p style="color: #94a3b8; font-size: 14px; margin-top: 10px;">Original hardware components.</p>
                 <span style="font-size: 24px; font-weight: 800; color: var(--primary); margin-top: 20px;">Rs. 2,500</span>
-                <button onclick="location.href='https://wa.me/94761138211'" class="btn-buy">MESSAGE TO BUY</button>
+                <button onclick="location.href='https://wa.me/94786888371'" class="btn-buy">MESSAGE TO BUY</button>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="guideModal" class="modal">
+    <div class="modal-content">
+        <i data-lucide="shield-check" style="color: var(--primary); width: 50px; height: 50px; margin-bottom: 20px;"></i>
+        <h2 style="margin-bottom: 15px;">SYSTEM COMPATIBILITY</h2>
+        <div style="text-align: left; font-size: 14px; color: #94a3b8; line-height: 1.6;">
+            <p>✅ <strong>Optimization:</strong> Android 10 and higher.</p>
+            <p>✅ <strong>Security:</strong> All APKs are verified & official.</p>
+            <p>✅ <strong>Performance:</strong> High-speed server integration.</p>
+            <p>🚀 <strong>Privacy:</strong> No user data is collected without consent.</p>
+        </div>
+        <button class="modal-btn" onclick="closeModal()">I UNDERSTAND</button>
     </div>
 </div>
 
@@ -157,6 +173,8 @@
         document.getElementById('nav-' + id).classList.add('active');
         window.scrollTo(0, 0);
     }
+    function openModal() { document.getElementById('guideModal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('guideModal').style.display = 'none'; }
     lucide.createIcons();
 </script>
 </body>
