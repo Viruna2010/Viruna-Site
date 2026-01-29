@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viruna Randinu | Official Portfolio</title>
+    <style>
+        :root { --bg: #0a0f1e; --card: #161b2d; --text: #e2e8f0; --accent: #38bdf8; }
+        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { color: var(--accent); font-size: 2.5rem; margin-bottom: 5px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--card); padding: 25px; border-radius: 20px; border: 1px solid #2d3748; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .btn { display: inline-block; padding: 10px 20px; background: var(--accent); color: #0a0f1e; border-radius: 10px; text-decoration: none; font-weight: bold; margin: 5px; }
+        .social-link { color: #94a3b8; text-decoration: none; display: block; margin: 10px 0; }
+        .badge { background: #1e293b; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VIRUNA RANDINU</h1>
+            <p>Full-Stack Enthusiast | YouTube Creator | AI Developer</p>
+            <div style="margin-top: 20px;">
+                <a href="https://wa.me/94761138211" class="btn">WhatsApp Me</a>
+                <a href="mailto:viruna@example.com" class="btn" style="background:none; border:1px solid var(--accent); color:var(--accent);">Email Me</a>
+            </div>
+        </header>
+
+        <h2 style="border-left: 4px solid var(--accent); padding-left: 15px;">🚀 Top Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🤖 AI Chat Bot</h3>
+                <p>Personal AI assistant web and APK with integrated features.</p>
+                <span class="badge">Web</span> <span class="badge">APK</span>
+            </div>
+            <div class="card">
+                <h3>📻 YouTube Live Radio</h3>
+                <p>24/7 Music streaming site with live chat integration.</p>
+                <span class="badge">Streaming</span> <span class="badge">Node.js</span>
+            </div>
+        </div>
+
+        <h2 style="border-left: 4px solid var(--accent); padding-left: 15px; margin-top: 40px;">📺 My Channels</h2>
+        <div class="card">
+            <p><strong>Viru Beatz</strong> <span class="badge">7.2k+ Subs</span></p>
+            <p><strong>Anything Channel</strong> <span class="badge">Daily Shorts</span></p>
+        </div>
+    </div>
+</body>
+</html>
